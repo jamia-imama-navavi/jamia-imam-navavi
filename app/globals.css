@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ------------------------------
+   Root Theme
+------------------------------ */
+
+:root {
+  --background: #020617;
+  --foreground: #ffffff;
+  --primary: #E6C88C;
+  --secondary: #A7D8FF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  color: var(--foreground);
+
+  background: linear-gradient(
+    180deg,
+    #020617 0%,
+    #08111F 30%,
+    #0B1730 60%,
+    #08111F 85%,
+    #020617 100%
+  );
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------------------
+   Sections
+------------------------------ */
+
+section {
+  position: relative;
+  background: transparent;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(230, 200, 140, 0.05),
+    transparent 65%
+  );
+}
+
+/* ------------------------------
+   Glass Card
+------------------------------ */
+
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.05);
+
+  transition: .4s;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(230,200,140,.6);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.45),
+    0 0 25px rgba(230,200,140,.15);
+}
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+
+.gold-btn {
+  background: #E6C88C;
+  color: #08111F;
+  transition: .3s;
+}
+
+.gold-btn:hover {
+  transform: scale(1.05);
+}
+
+.outline-btn {
+  border: 2px solid #E6C88C;
+  color: #E6C88C;
+  transition: .3s;
+}
+
+.outline-btn:hover {
+  background: #E6C88C;
+  color: #08111F;
+}
+
+/* ------------------------------
+   Scrollbar
+------------------------------ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08111F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E6C88C;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f3d89e;
+}
+
+/* ------------------------------
+   Selection
+------------------------------ */
+
+::selection {
+  background: #E6C88C;
+  color: #08111F;
+}
